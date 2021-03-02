@@ -3,6 +3,7 @@ import * as ReactDom from "react-dom"
 import * as GrommetThemeV1 from "grommet-theme-v1"
 import * as PropTypes from "prop-types"
 import * as grommet from "grommet"
+import * as GrommetUtils from "grommet/utils"
 import * as GrommetIcons from "grommet-icons"
 import * as ReactRouterDom from "react-router-dom"
 import * as StyledComponents from "styled-components"
@@ -22,7 +23,7 @@ const dependencies = {
   "react-dom": ReactDom,
   "grommet-theme-v1": GrommetThemeV1,
   "prop-types": PropTypes,
-  grommet: grommet,
+  grommet: { ...grommet, utils: GrommetUtils },
   "grommet-icons": GrommetIcons,
   "react-router-dom": ReactRouterDom,
   "styled-components": StyledComponents,
