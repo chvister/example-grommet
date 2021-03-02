@@ -2,35 +2,11 @@ import * as React from "react"
 import * as ReactDom from "react-dom"
 import * as GrommetThemeV1 from "grommet-theme-v1"
 import * as PropTypes from "prop-types"
-import * as Grommet from "grommet"
+import * as grommet from "grommet"
 import * as GrommetIcons from "grommet-icons"
 import * as ReactRouterDom from "react-router-dom"
 import * as StyledComponents from "styled-components"
-
-const dependencies = {
-  react: React,
-  "react-dom": ReactDom,
-  "grommet-theme-v1": GrommetThemeV1,
-  "prop-types": PropTypes,
-  grommet: Grommet,
-  "grommet-icons": GrommetIcons,
-  "react-router-dom": ReactRouterDom,
-  "styled-components": StyledComponents,
-}
-
-window.__deps = dependencies
-
-import React, { Component } from "react"
-import { render } from "react-dom"
-import {
-  Box,
-  Button,
-  Grommet,
-  Text,
-  TextInput,
-  ResponsiveContext,
-} from "grommet"
-import { Search, Menu } from "grommet-icons"
+import * as ReactIntl from "react-intl"
 import { theme } from "./theme"
 import {
   AppHeader,
@@ -40,8 +16,23 @@ import {
   VirtualMachinesCard,
 } from "./components"
 import { hardware, utilization, vms, notification } from "./data"
-import { IntlProvider} from 'react-intl';
 
+const dependencies = {
+  react: React,
+  "react-dom": ReactDom,
+  "grommet-theme-v1": GrommetThemeV1,
+  "prop-types": PropTypes,
+  grommet: grommet,
+  "grommet-icons": GrommetIcons,
+  "react-router-dom": ReactRouterDom,
+  "styled-components": StyledComponents,
+}
+
+window.__deps = dependencies
+
+const { Box, Button, Grommet, Text, TextInput, ResponsiveContext } = grommet
+const { Search, Menu } = GrommetIcons
+const { IntlProvider } = ReactIntl
 
 const userSession = {
   user: {
@@ -56,7 +47,7 @@ const userSession = {
   ],
 }
 
-class AppBody extends Component {
+class AppBody extends React.Component {
   static contextType = ResponsiveContext
 
   render() {
@@ -123,11 +114,11 @@ class AppBody extends Component {
 
 function loadLocaleData(locale) {
   switch (locale) {
-    case 'sk':
-    case 'sk-SK':
-      return import('./compiled-lang/sk.json');
+    case "sk":
+    case "sk-SK":
+      return import("./compiled-lang/sk.json")
     default:
-      return import('./compiled-lang/en.json');
+      return import("./compiled-lang/en.json")
   }
 }
 const App = ({ locale, messages }) => {
@@ -140,8 +131,11 @@ const App = ({ locale, messages }) => {
   )
 }
 const locale = navigator.language
-if(!window.__skip_render){
-  loadLocaleData(locale).then((messages) => {
-    render(<App locale={locale}  messages={messages} />, document.getElementById("root"))
+if (!window.__skip_render) {
+  loadLocaleData(locale).then(messages => {
+    ReactDom.render(
+      <App locale={locale} messages={messages} />,
+      document.getElementById("root")
+    )
   })
 }
