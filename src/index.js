@@ -1,24 +1,24 @@
-// import * as React from "react"
-// import * as ReactDom from "react-dom"
-// import * as GrommetThemeV1 from "grommet-theme-v1"
-// import * as PropTypes from "prop-types"
-// import * as Grommet from "grommet"
-// import * as GrommetIcons from "grommet-icons"
-// import * as ReactRouterDom from "react-router-dom"
-// import * as StyledComponents from "styled-components"
+import * as React from "react"
+import * as ReactDom from "react-dom"
+import * as GrommetThemeV1 from "grommet-theme-v1"
+import * as PropTypes from "prop-types"
+import * as Grommet from "grommet"
+import * as GrommetIcons from "grommet-icons"
+import * as ReactRouterDom from "react-router-dom"
+import * as StyledComponents from "styled-components"
 
-// const dependencies = {
-//   react: React,
-//   "react-dom": ReactDom,
-//   "grommet-theme-v1": GrommetThemeV1,
-//   "prop-types": PropTypes,
-//   grommet: Grommet,
-//   "grommet-icons": GrommetIcons,
-//   "react-router-dom": ReactRouterDom,
-//   "styled-components": StyledComponents,
-// }
+const dependencies = {
+  react: React,
+  "react-dom": ReactDom,
+  "grommet-theme-v1": GrommetThemeV1,
+  "prop-types": PropTypes,
+  grommet: Grommet,
+  "grommet-icons": GrommetIcons,
+  "react-router-dom": ReactRouterDom,
+  "styled-components": StyledComponents,
+}
 
-// window.__deps = dependencies
+window.__deps = dependencies
 
 import React, { Component } from "react"
 import { render } from "react-dom"
