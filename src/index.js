@@ -27,6 +27,7 @@ const dependencies = {
   "grommet-icons": GrommetIcons,
   "react-router-dom": ReactRouterDom,
   "styled-components": StyledComponents,
+  'react-intl': ReactIntl,
 }
 
 window.__deps = dependencies
