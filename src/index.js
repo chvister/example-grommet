@@ -8,6 +8,8 @@ import * as GrommetIcons from "grommet-icons"
 import * as ReactRouterDom from "react-router-dom"
 import * as StyledComponents from "styled-components"
 import * as ReactIntl from "react-intl"
+import * as Urql from "urql"
+import { gql } from "graphql-tag"
 import { theme } from "./theme"
 import {
   AppHeader,
@@ -27,7 +29,9 @@ const dependencies = {
   "grommet-icons": GrommetIcons,
   "react-router-dom": ReactRouterDom,
   "styled-components": StyledComponents,
-  'react-intl': ReactIntl,
+  "react-intl": ReactIntl,
+  "graphql-tag": gql,
+  urql: Urql,
 }
 
 window.__deps = dependencies
@@ -81,7 +85,7 @@ class AppBody extends React.Component {
                 <VirtualMachinesCard data={vms} />
               </Box>
               <Box gap="large" flex="grow" margin="medium">
-                {utilization.map(data => (
+                {utilization.map((data) => (
                   <UtilizationCard key={data.name} data={data} />
                 ))}
               </Box>
@@ -134,7 +138,7 @@ const App = ({ locale, messages }) => {
 }
 const locale = navigator.language
 if (!window.__skip_render) {
-  loadLocaleData(locale).then(messages => {
+  loadLocaleData(locale).then((messages) => {
     ReactDom.render(
       <App locale={locale} messages={messages} />,
       document.getElementById("root")
