@@ -9,6 +9,7 @@ import * as ReactRouterDom from "react-router-dom"
 import * as StyledComponents from "styled-components"
 import * as ReactIntl from "react-intl"
 import * as Urql from "urql"
+import * as Graphql from "graphql"
 import { gql } from "graphql-tag"
 import { theme } from "./theme"
 import {
@@ -32,6 +33,7 @@ const dependencies = {
   "react-intl": ReactIntl,
   "graphql-tag": gql,
   urql: Urql,
+  graphql: Graphql,
 }
 
 window.__deps = dependencies
