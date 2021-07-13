@@ -10,6 +10,7 @@ import * as StyledComponents from "styled-components"
 import * as ReactIntl from "react-intl"
 import * as Urql from "urql"
 import * as Graphql from "graphql"
+import * as Formik from "formik"
 import { gql } from "graphql-tag"
 import { theme } from "./theme"
 import {
@@ -34,6 +35,7 @@ const dependencies = {
   "graphql-tag": gql,
   urql: Urql,
   graphql: Graphql,
+  formik: Formik,
 }
 
 window.__deps = dependencies
